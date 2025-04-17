@@ -1,4 +1,10 @@
-type Props = { name: string; buttonComponent?: any; isSmallText?: boolean };
+import { JSX } from "react";
+
+type Props = {
+  name: string;
+  buttonComponent?: JSX.Element;
+  isSmallText?: boolean;
+};
 
 const Header = ({ name, buttonComponent, isSmallText = false }: Props) => {
   return (
