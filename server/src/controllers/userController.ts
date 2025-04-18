@@ -8,3 +8,17 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
 
   res.json(users);
 };
+
+export const postUser = async (req: Request, res: Response) => {
+  const {
+    username,
+    cognitoId,
+    profilePictureUrl = "i1.jpg",
+    teamId = 1,
+  } = req.body;
+  const newUser = await prisma.user.create({
+    data: { username, cognitoId, profilePictureUrl, teamId },
+  });
+
+  res.json({ message: "User Created Suceessfully", newUser });
+};
