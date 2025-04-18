@@ -9,6 +9,14 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
   res.json(users);
 };
 
+export const getUser = async (req: Request, res: Response): Promise<void> => {
+  const { cognitoId } = req.params;
+  const user = await prisma.user.findUnique({ where: { cognitoId } });
+  if (user) {
+    res.json(user);
+  }
+};
+
 export const postUser = async (req: Request, res: Response) => {
   const {
     username,
