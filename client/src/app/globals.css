@@ -62,6 +62,11 @@ body {
   font-family: Arial, Helvetica, sans-serif; */
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
 .timeline ._3_ygE {
   @apply dark:border-stroke-dark rounded-tl-md border border-r-0 border-[#e6e4e4];
 }
